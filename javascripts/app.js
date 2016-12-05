@@ -1,3 +1,3 @@
 "use strict";
 
-console.log("hello world!");
+var app = angular.module("Thankschanukwanzaabirthmas", ["ngRoute"]);

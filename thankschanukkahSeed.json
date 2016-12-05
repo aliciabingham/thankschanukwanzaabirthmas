@@ -1,0 +1,23 @@
+{
+  "events": {
+    "event0": {
+      "name": "Thanksgiving"
+    },
+      "event1": {
+      "name": "Brady's Birthday"
+    },
+      "event2": {
+      "name": "Christmas"
+    }
+  },
+  "users":{
+    "user0":{
+      "uid":"gmoNEtXEqsg753Mw3xMoprS1LJr2",
+      "username":"b"
+    },
+    "user1":{
+      "uid":"dedvwZc8rQO5hX5WZ88gHaUZczF3",
+      "username":"a"
+    }
+  }
+}
