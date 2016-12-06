@@ -28,5 +28,31 @@
       "uid":"dedvwZc8rQO5hX5WZ88gHaUZczF3",
       "username":"a"
     }
+  },
+  "people" : {
+    "person0":{
+      "firstName" : "Tommy",
+      "lastName" : "Miceli",
+      "phoneNumber": "555-555-5555",
+      "address": "123 blah blah street",
+      "cityState": "Bowling Green, KY",
+      "zipCode": "42101"
+    },
+    "person1":{
+      "firstName" : "Stephanie",
+      "lastName" : "Miceli",
+      "phoneNumber": "556-556-5566",
+      "address": "123 blah blah street",
+      "cityState": "Columbia, TN",
+      "zipCode": "38401"
+    },    
+    "person2":{
+      "firstName" : "Annika",
+      "lastName" : "Bingham",
+      "phoneNumber": "557-557-7775",
+      "address": "123 dorm street",
+      "cityState": "Bowling Green, KY",
+      "zipCode": "42104"
+    }
   }
 }

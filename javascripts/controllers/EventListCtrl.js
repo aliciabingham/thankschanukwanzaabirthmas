@@ -18,6 +18,10 @@ getEvents();
     console.log("show new event click working");
   };
 
+  $scope.showPeoplePage = function(){
+    $location.url("/people/list");
+  };
+
   $scope.allEvents = function(){
     console.log("you clicked all events");
     $scope.showListView = true;
