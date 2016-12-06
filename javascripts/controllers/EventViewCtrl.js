@@ -8,7 +8,7 @@ app.controller("EventViewCtrl", function($scope, $routeParams, EventFactory){
 
   EventFactory.getSingleEvent(eventId).then(function(oneEvent){
     oneEvent.id = eventId;
-    $scope.selectedItem = oneEvent;
+    $scope.selectedEvent = oneEvent;
     console.log("oneEvent", oneEvent);
   });
 });

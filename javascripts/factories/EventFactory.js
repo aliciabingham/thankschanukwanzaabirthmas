@@ -64,7 +64,7 @@ var getSingleEvent = function(eventId){
   var editEvent = function(editEvent){
     console.log("factory edit response", editEvent);
     return $q((resolve, reject) => {
-      $http.put(`${FIREBASE_CONFIG.databaseURL}/items/${editEvent.id}.json`,
+      $http.put(`${FIREBASE_CONFIG.databaseURL}/events/${editEvent.id}.json`,
         JSON.stringify({
           name: editEvent.name,
           date: editEvent.date,

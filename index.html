@@ -3,6 +3,7 @@
 <head>
 	<title>Who's Coming to Thankschanukwanzaabirthmas?</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
 </head>
 <body ng-app="Thankschanukwanzaabirthmas">
@@ -20,17 +21,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">All Events</a></li>
-            <li><a href="#">Add new Event</a></li>
+            <li><a href="/#/events/list">All Events</a></li>
+            <li><a href="/#/events/new">Add new Event</a></li>
           </ul>
         </li>
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Groups <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">View all Groups</a></li>
-            <li><a href="#">Add new Group</a></li>
+            <li><a>Add new Group</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -59,12 +60,17 @@
 <script type="text/javascript" src="javascripts/factories/AuthFactory.js"></script>
 <script type="text/javascript" src="javascripts/factories/UserFactory.js"></script>
 <script type="text/javascript" src="javascripts/factories/EventFactory.js"></script>
+<script type="text/javascript" src="javascripts/factories/PeopleFactory.js"></script>
 
 <script type="text/javascript" src="javascripts/controllers/AuthCtrl.js"></script>
 <script type="text/javascript" src="javascripts/controllers/EventListCtrl.js"></script>
 <script type="text/javascript" src="javascripts/controllers/EventViewCtrl.js"></script>
 <script type="text/javascript" src="javascripts/controllers/EventEditCtrl.js"></script>
 <script type="text/javascript" src="javascripts/controllers/EventNewCtrl.js"></script>
+<script type="text/javascript" src="javascripts/controllers/PeopleListCtrl.js"></script>
+<script type="text/javascript" src="javascripts/controllers/PeopleViewCtrl.js"></script>
+<script type="text/javascript" src="javascripts/controllers/PeopleEditCtrl.js"></script>
+<script type="text/javascript" src="javascripts/controllers/PeopleNewCtrl.js"></script>
 
 
 </body>

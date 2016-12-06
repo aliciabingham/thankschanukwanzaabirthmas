@@ -11,7 +11,7 @@ app.controller("EventEditCtrl", function($scope, $location, $routeParams, EventF
   });
 
     $scope.addNewEvent = function(){
-      EventFactory.editItem($scope.newEvent).then(function(response){
+      EventFactory.editEvent($scope.newEvent).then(function(response){
         $scope.newEvent = {};
         $location.url("/events/list");
       });

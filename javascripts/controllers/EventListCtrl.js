@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("EventListCtrl", function($scope, $rootScope, EventFactory){
+app.controller("EventListCtrl", function($scope, $location, $rootScope, EventFactory){
   $scope.welcome = "hello";
   $scope.events = [];
 
@@ -13,12 +13,17 @@ let getEvents = function(){
 
 getEvents();
 
-  $scope.allItems = function(){
+  $scope.showNewEventPage = function(){
+    $location.url("/events/new");
+    console.log("show new event click working");
+  };
+
+  $scope.allEvents = function(){
     console.log("you clicked all events");
     $scope.showListView = true;
   };
 
-  $scope.newItem = function(){
+  $scope.newEvent = function(){
     console.log("you clicked new item");
     $scope.showListView = false;
   };
