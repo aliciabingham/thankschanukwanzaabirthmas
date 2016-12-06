@@ -59,5 +59,25 @@ app.config(function($routeProvider){
       controller: 'EventEditCtrl',
       resolve: {isAuth}
     })
+    .when('/people/list', {
+      templateUrl: 'partials/people-list.html',
+      controller: 'PeopleListCtrl',
+      resolve: {isAuth}
+    })
+    .when('/people/new', {
+      templateUrl: 'partials/people-new.html',
+      controller: 'PeopleNewCtrl',
+      resolve: {isAuth}
+    })
+    .when('/people/view/:id', {
+      templateUrl: 'partials/people-view.html',
+      controller: 'PeopleViewCtrl',
+      resolve: {isAuth}
+    })
+    .when('/people/edit/:id', {
+      templateUrl: 'partials/people-new.html',
+      controller: 'PeopleEditCtrl',
+      resolve: {isAuth}
+    })
    .otherwise('/Register');
 });
