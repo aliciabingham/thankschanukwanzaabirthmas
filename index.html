@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Who's Coming to Thankschanukwanzaabirthmas?</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="styles/main.css"/>
 </head>
-<body>
+<body ng-app="Thankschanukwanzaabirthmas">
 
+<div ng-view></div>
 
+<script src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/lib/bower_components/angular/angular.min.js"></script>
+<script src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 <script type="text/javascript" src="javascripts/app.js"></script>
+<script type="text/javascript" src="javascripts/appConfig.js"></script>
+<script type="text/javascript" src="javascripts/appConstants.js"></script>
+<script type="text/javascript" src="javascripts/controllers/AuthCtrl.js"></script>
+<script type="text/javascript" src="javascripts/factories/AuthFactory.js"></script>
+<script type="text/javascript" src="javascripts/factories/UserFactory.js"></script>
 </body>
 </html>

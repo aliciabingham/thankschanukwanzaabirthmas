@@ -1,0 +1,25 @@
+<div class="container col-xs-6 col-xs-offset-3">  
+  <div class="row">
+  <button class="btn" ng-click="setRegisterContainer()">Show Registration Form</button>
+    <form ng-show="registerContainer">
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="register.email" autofocus>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="col-xs-offset-1 col-xs-10" placeholder="Password" ng-model="register.password">
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="col-xs-offset-1 col-xs-10" placeholder="Username" ng-model="register.username">
+      </div>
+      <div class="form-group">
+        <a class="btn btn-lg btn-success col-xs-offset-1 col-xs-10" ng-click="registerUser(register)">Submit Registration</a>
+      </div>
+      <div class="col-xs-4 col-xs-offset-4">
+        <h3>Already Registered? <button class="btn" ng-click="loginFunction()">Click here</button> to sign in.</h3>
+      </div>
+    </form>
+  </div>
+</div>s
