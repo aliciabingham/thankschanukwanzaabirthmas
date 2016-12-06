@@ -16,12 +16,12 @@ app.controller("AuthCtrl", function($rootScope, $scope, $location, AuthFactory, 
         $rootScope.user = userCreds;
         $scope.login = {};
         $scope.register = {};
-        $location.url("/items/list");
+        $location.url("/events/list");
       });
   };
 
   $scope.loginFunction = function(){
-    $location.url("/authLogin");
+    $location.url("/Login");
     $scope.loginContainer = true;
     $scope.registerContainer = false;
     console.log("click working");

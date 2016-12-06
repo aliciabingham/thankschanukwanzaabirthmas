@@ -1,13 +1,22 @@
 {
   "events": {
     "event0": {
-      "name": "Thanksgiving"
+      "name": "Thanksgiving",
+      "date": "2016-11-24",
+      "isFuture" : "false",
+      "uid": "gmoNEtXEqsg753Mw3xMoprS1LJr2"
     },
       "event1": {
-      "name": "Brady's Birthday"
+      "name": "Brady's Birthday",
+      "date": "2016-09-22",
+      "isFuture" : "false",
+      "uid" : "gmoNEtXEqsg753Mw3xMoprS1LJr2"
     },
       "event2": {
-      "name": "Christmas"
+      "name": "Christmas",
+      "date": "2016-12-25",
+      "isFuture" : "true",
+      "uid" : "dedvwZc8rQO5hX5WZ88gHaUZczF3"
     }
   },
   "users":{
