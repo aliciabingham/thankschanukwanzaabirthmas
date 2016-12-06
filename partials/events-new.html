@@ -1,0 +1,13 @@
+<div ng-show="!showListView">
+  <h3>New Event</h3>
+    <form>
+      <div class="form-group" placeholder="New Event">
+        <input type="text" class="form-control" placeholder="New Event" ng-model="newEvent.name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="New Event Date" ng-model="newEvent.date">
+      </div>
+        <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEvent()">New Event</button>
+    </form>
+  </div>
+</div>
