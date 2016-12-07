@@ -59,6 +59,26 @@ app.config(function($routeProvider){
       controller: 'EventEditCtrl',
       resolve: {isAuth}
     })
+    .when('/groups/list', {
+      templateUrl: 'partials/groups-list.html',
+      controller: 'GroupListCtrl',
+      resolve: {isAuth}
+    })
+    .when('/groups/new', {
+      templateUrl: 'partials/groups-new.html',
+      controller: 'GroupNewCtrl',
+      resolve: {isAuth}
+    })
+    .when('/groups/view/:id', {
+      templateUrl: 'partials/groups-view.html',
+      controller: 'GroupViewCtrl',
+      resolve: {isAuth}
+    })
+    .when('/groups/edit/:id', {
+      templateUrl: 'partials/groups-new.html',
+      controller: 'GroupEditCtrl',
+      resolve: {isAuth}
+    })
     .when('/people/list', {
       templateUrl: 'partials/people-list.html',
       controller: 'PeopleListCtrl',

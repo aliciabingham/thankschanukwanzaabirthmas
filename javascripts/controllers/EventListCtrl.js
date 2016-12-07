@@ -22,6 +22,10 @@ getEvents();
     $location.url("/people/list");
   };
 
+  $scope.showGroupsPage = function(){
+  $location.url("/groups/list");
+  };
+
   $scope.allEvents = function(){
     console.log("you clicked all events");
     $scope.showListView = true;
@@ -41,7 +45,7 @@ $scope.deleteEvent = function(eventID){
 };
 
 $scope.inputChange = function(thingy){
-  EventFactory.editItem(thingy).then(function(response){
+  EventFactory.editEvent(thingy).then(function(response){
     console.log("ctrl inputChange response", response);
   });
 };

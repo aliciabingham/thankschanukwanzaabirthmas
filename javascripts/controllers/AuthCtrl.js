@@ -1,6 +1,11 @@
 'use strict';
 
 app.controller("AuthCtrl", function($rootScope, $scope, $location, AuthFactory, UserFactory){
+$scope.login = {
+   email: "a@a.com",
+   password:"123123"
+ };
+
 
   if($location.path() === "/logout"){
     AuthFactory.logout();
@@ -9,7 +14,9 @@ app.controller("AuthCtrl", function($rootScope, $scope, $location, AuthFactory, 
   }
 
   let logMeIn = function(loginStuff){
+      console.log("why isn't this working");
         AuthFactory.authenticate(loginStuff).then(function(didLogin){
+          console.log(loginStuff, "login Stuff");
         console.log("didLogin", didLogin);
         return UserFactory.getUser(didLogin.uid);
       }).then(function(userCreds){
