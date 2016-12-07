@@ -54,5 +54,19 @@
       "cityState": "Bowling Green, KY",
       "zipCode": "42104"
     }
+  },
+  "groups": {
+    "group0":{
+      "name": "Steph's Family",
+      "usualLocation": "Kay's House"
+    },
+    "group1":{
+      "name": "Steph's Mom",
+      "usualLocation": "Jennifer's Apartment"
+    },
+    "group2": {
+      "name": "Alicia's Family",
+      "usualLocation": "Rhonda's house"
+    }
   }
 }
