@@ -4,7 +4,7 @@ app.factory("PeopleFactory", function($q, $http, FIREBASE_CONFIG){
 
   var getPeopleList = function(userId){
     return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/people.json`)
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/people.json?orderBy="uid"&equalTo="${userId}"`)
       .success(function(response){
         let people = [];
         Object.keys(response).forEach(function(key){
@@ -26,6 +26,9 @@ app.factory("PeopleFactory", function($q, $http, FIREBASE_CONFIG){
           firstName: newPerson.firstName,
           lastName: newPerson.lastName,
           phoneNumber: newPerson.phoneNumber,
+          address: newPerson.address,
+          cityState: newPerson.cityState,
+          zipCode: newPerson.zipCode,
           uid: newPerson.uid
         })
         )
@@ -70,6 +73,9 @@ var getSinglePerson = function(personId){
           firstName: editPerson.firstName,
           lastName: editPerson.lastName,
           phoneNumber: editPerson.phoneNumber,
+          address: editPerson.address,
+          cityState: editPerson.cityState,
+          zipCode: editPerson.zipCode,
           uid: editPerson.uid
         })
         )

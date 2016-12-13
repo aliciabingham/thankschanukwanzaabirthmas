@@ -13,8 +13,12 @@
     <div ng-repeat="person in people">
         <div class="panel panel-default">
             <div class="panel-body">
-                <div class="col-xs-2"><a href=#/people/view/{{person.id}}>{{person.firstName}}</a></div>
-                <div class="col-xs-2">{{person.lastName}}</div>
+                <div class="col-xs-1"><a href=#/people/view/{{person.id}}>{{person.firstName}}</a></div>
+                <div class="col-xs-1"><a href=#/people/view/{{person.id}}>{{person.lastName}}</a></div>
+                <div class="col-xs-2">{{person.phoneNumber}}</div>
+                <div class="col-xs-3">{{person.address}}</div>
+                <div class="col-xs-2">{{person.cityState}}</div>
+                <div class="col-xs-1">{{person.zipCode}}</div>
                 <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deletePerson(person.id)"></button></div>
             </div>
         </div>

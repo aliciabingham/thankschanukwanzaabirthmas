@@ -1,4 +1,19 @@
 <h1>Person: {{selectedPerson.firstName}}</h1>
-<button class="btn btn-info"><a ng-href="#/people/edit/{{selectedPerson.id}}">Edit</a></button>
+<a ng-href="#/people/edit/{{selectedPerson.id}}"><button class="btn btn-info">Edit</button></a>
 <h2>Name: {{selectedPerson.firstName}} {{selectedPerson.lastName}}</h2>
 <h2>Phone: {{selectedPerson.phoneNumber}}</h2>
+<h2>Address: {{selectedPerson.address}}</h2>
+<h2>{{selectedPerson.cityState}}</h2>
+<h2>{{selectedPerson.zipCode}}</h2>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Add To Group
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li ng-repeat="group in groups" ng-click="addPersonToGroup(group.id)"><a>{{group.name}}</a></li>
+  </ul>
+</div>
+
+
+<!-- //ng-change="addPersonToGroup()" -->

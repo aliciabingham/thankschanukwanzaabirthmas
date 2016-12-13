@@ -1,15 +1,29 @@
 "use strict";
 
-app.factory("EventFactory", function($q, $http, FIREBASE_CONFIG){
+app.factory("EventFactory", function($q, $http, FIREBASE_CONFIG, GroupFactory){
 
   var getEventList = function(userId){
     return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/events.json`)
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/events.json?orderBy="uid"&equalTo="${userId}"`)
       .success(function(response){
         let events = [];
         Object.keys(response).forEach(function(key){
           response[key].id = key;
-          events.push(response[key]);
+
+          var event = response[key];
+          event.id = key;
+          let members = [];
+
+          function addMemberToEvent (jackass) {
+            members.push(jackass);
+          } 
+
+          for(var i=0; i < event.members.length; i++) {
+            GroupFactory.getSingleGroup(event.members[i]).then(addMemberToEvent);
+          }
+          //loop through event.members and get user info
+          event.resolvedMembers = members;
+          events.push(event);
         });
         resolve(events);
       })
@@ -52,8 +66,20 @@ var deleteEvent = function(eventID){
 var getSingleEvent = function(eventId){
   return $q((resolve, reject) => {
   $http.get(`${FIREBASE_CONFIG.databaseURL}/events/${eventId}.json`)
-  .success(function(getSingleResponse){
-    resolve(getSingleResponse);
+  .success(function(event){
+    let members = [];
+    event.id = eventId;
+    
+    function addMemberToEvent (jackass) {
+      members.push(jackass);
+    }
+
+    for(var i=0; i < event.members.length; i++) {
+      GroupFactory.getSingleGroup(event.members[i]).then(addMemberToEvent);
+    }
+    //loop through event.members and get user info
+    event.resolvedMembers = members;
+    resolve(event);   
   })
   .error(function(getSingleError){
   reject(getSingleError);
@@ -68,7 +94,9 @@ var getSingleEvent = function(eventId){
         JSON.stringify({
           name: editEvent.name,
           date: editEvent.date,
-          uid: editEvent.uid
+          uid: editEvent.uid,
+          members: editEvent.members,
+          id: editEvent.id
         })
         )
       .success(function(editResponse){

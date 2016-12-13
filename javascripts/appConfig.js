@@ -99,5 +99,5 @@ app.config(function($routeProvider){
       controller: 'PeopleEditCtrl',
       resolve: {isAuth}
     })
-   .otherwise('/Register');
+   .otherwise('/Login');
 });

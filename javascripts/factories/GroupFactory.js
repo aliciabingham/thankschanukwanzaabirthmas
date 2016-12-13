@@ -1,15 +1,29 @@
 "use strict";
 
-app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG){
+app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, UserFactory){
 
+
+ 
   var getGroupList = function(userId){
     return $q((resolve, reject) => {
-      $http.get(`${FIREBASE_CONFIG.databaseURL}/groups.json`)
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/groups.json?orderBy="uid"&equalTo="${userId}"`)
       .success(function(response){
         let groups = [];
         Object.keys(response).forEach(function(key){
-          response[key].id = key;
-          groups.push(response[key]);
+          var group = response[key];
+          group.id = key;
+          let members = [];
+
+          function addMember (jackass) {
+            members.push(jackass);
+          } 
+
+          for(var i=0; i < group.members.length; i++) {
+            PeopleFactory.getSinglePerson(group.members[i]).then(addMember);
+          }
+          //loop through group.members and get user info
+          group.resolvedMembers = members;
+          groups.push(group);
         });
         resolve(groups);
       })
@@ -52,8 +66,20 @@ var deleteGroup = function(groupId){
 var getSingleGroup = function(groupId){
   return $q((resolve, reject) => {
   $http.get(`${FIREBASE_CONFIG.databaseURL}/groups/${groupId}.json`)
-  .success(function(getSingleResponse){
-    resolve(getSingleResponse);
+  .success(function(group){
+    let members = [];
+    group.id = groupId;
+    
+    function addMember (jackass) {
+      members.push(jackass);
+    }
+
+    for(var i=0; i < group.members.length; i++) {
+      PeopleFactory.getSinglePerson(group.members[i]).then(addMember);
+    }
+    //loop through group.members and get user info
+    group.resolvedMembers = members;
+    resolve(group);
   })
   .error(function(getSingleError){
   reject(getSingleError);
@@ -68,11 +94,14 @@ var getSingleGroup = function(groupId){
         JSON.stringify({
           name: editGroup.name,
           usualLocation: editGroup.usualLocation,
-          uid: editGroup.uid
+          uid: editGroup.uid,
+          members: editGroup.members,
+          id: editGroup.id
         })
         )
       .success(function(editResponse){
         resolve(editResponse);
+        console.log("response from groupfactory edit", editResponse);
       })
       .error(function(editError){
         reject(editError);

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("GroupViewCtrl", function($scope, $routeParams, GroupFactory){
+app.controller("GroupViewCtrl", function($scope, $routeParams, $rootScope, GroupFactory, EventFactory){
   $scope.selectedGroup = {};
   var groupId = $routeParams.id;
   console.log("$routeParams", groupId);
@@ -11,4 +11,21 @@ app.controller("GroupViewCtrl", function($scope, $routeParams, GroupFactory){
     $scope.selectedGroup = oneGroup;
     console.log("oneGroup", oneGroup);
   });
+
+    $scope.addGroupToEvent = function(eventId){
+
+  	console.log("what is the current value of this group id?");
+    console.log(eventId);
+    console.log(groupId);
+    EventFactory.getSingleEvent(eventId).then(function(event){
+      event.members.push(groupId);
+      EventFactory.editEvent(event);
+    });
+  };
+  EventFactory.getEventList($rootScope.user.uid).then(function(results){
+    $scope.events=results;
+  });
+
+
+   $scope.events=[];
 });

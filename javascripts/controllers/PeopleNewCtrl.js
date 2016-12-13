@@ -1,7 +1,8 @@
 'use strict';
 
-app.controller("PeopleNewCtrl", function($scope, $rootScope, $location, PeopleFactory){
+app.controller("PeopleNewCtrl", function($scope, $rootScope, $routeParams, $location, PeopleFactory){
   $scope.newPerson = {};
+	let personId = $routeParams.id;
 
   $scope.addNewPerson = function(){
     $scope.newPerson.uid = $rootScope.user.uid;
@@ -9,7 +10,7 @@ app.controller("PeopleNewCtrl", function($scope, $rootScope, $location, PeopleFa
       $location.url("/people/list");
       $scope.newPerson = {};
       $scope.showListView = true;
-
+	  console.log("onePerson", personId);
     });
   };
 
