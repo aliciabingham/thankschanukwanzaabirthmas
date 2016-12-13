@@ -8,12 +8,15 @@
         </div>
     </div>
 </div>
-
 <h3>Groups</h3>
     <div ng-repeat="group in groups">
         <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="col-xs-5"><a href=#/groups/view/{{group.id}}>{{group.name}}</a></div>
+        <div class="panel-body">
+                <div class="col-xs-3"><a href=#/groups/view/{{group.id}}>{{group.name}}</a></div>
+                <div class="col-xs-2" ng-repeat="person in group.resolvedMembers">
+                    {{person.firstName}} {{person.lastName}}
+                </div>
+                <div class="col-xs-3">{{group.usualLocation}}</div>
                 <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteGroup(group.id)"></button></div>
             </div>
         </div>
@@ -21,3 +24,20 @@
 <div class="row">
     <button class="btn" ng-click="showNewGroupPage()">New Group</button>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

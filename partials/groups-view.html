@@ -1,3 +1,16 @@
 <h1>Group: {{selectedGroup.name}}</h1>
 <button class="btn btn-info"><a ng-href="#/groups/edit/{{selectedGroup.id}}">Edit</a></button>
 <h2>Name: {{selectedGroup.name}}</h2>
+<h2>Members:</h2>
+<h4 ng-repeat="member in selectedGroup.resolvedMembers">{{member.firstName}} {{member.lastName}}</h4>
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Add To Event
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li ng-repeat="event in events" ng-click="addGroupToEvent(event.id)"><a>{{event.name}}</a></li>
+  </ul>
+</div>
+
