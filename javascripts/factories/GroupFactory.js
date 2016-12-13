@@ -39,6 +39,8 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
         JSON.stringify({
           name: newGroup.name,
           usualLocation: newGroup.usualLocation,
+          id: newGroup.id,
+          members: newGroup.members, 
           uid: newGroup.uid
         })
         )
