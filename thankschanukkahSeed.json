@@ -43,7 +43,9 @@
       "address": "123 blah blah street",
       "cityState": "Bowling Green, KY",
       "zipCode": "42101",
-      "uid": "dedvwZc8rQO5hX5WZ88gHaUZczF3"
+      "uid": "dedvwZc8rQO5hX5WZ88gHaUZczF3",
+      "haveAGift": "false",
+      "giftType": "socks"
     },
     "person1": {
       "firstName": "Stephanie",
@@ -52,7 +54,9 @@
       "address": "123 blah blah street",
       "cityState": "Columbia, TN",
       "zipCode": "38401",
-      "uid": "gmoNEtXEqsg753Mw3xMoprS1LJr2"
+      "uid": "gmoNEtXEqsg753Mw3xMoprS1LJr2",
+      "haveAGift": "false",
+      "giftType": ""
     },
     "person2": {
       "firstName": "Annika",
@@ -62,7 +66,9 @@
       "cityState": "Bowling Green, KY",
       "zipCode": "42104",
       "uid": "dedvwZc8rQO5hX5WZ88gHaUZczF3",
-      "group": "Alicia's Family"
+      "group": "Alicia's Family",
+      "haveAGift": "true",
+      "giftType": ""
     }
   },
   "groups": {
@@ -70,14 +76,16 @@
       "name": "Steph's Family",
       "usualLocation": "Kay's House",
       "members": ["person0", "person1"],
-      "uid": "gmoNEtXEqsg753Mw3xMoprS1LJr2"
+      "uid": "gmoNEtXEqsg753Mw3xMoprS1LJr2",
+      "giftRequired": "false"
     },
     "group1": {
       "id": "1",
       "name": "Steph's Mom",
       "usualLocation": "Jennifer's Apartment",
       "uid": "dedvwZc8rQO5hX5WZ88gHaUZczF3",
-      "members": ["person0", "person1"]
+      "members": ["person0", "person1"],
+      "giftRequired": "false"
 
     },
     "group2": {
@@ -85,7 +93,8 @@
       "name": "Alicia's Family",
       "usualLocation": "Rhonda's house",
       "uid": "dedvwZc8rQO5hX5WZ88gHaUZczF3",
-      "members": ["person0", "person1"]
+      "members": ["person0", "person1"],
+      "giftRequired": "true"
     }
   }
 }

@@ -10,7 +10,22 @@
 </div>
 
 <h3>Upcoming Events</h3>
-    <div ng-repeat="event in events" >
+    <div ng-repeat="event in events | filter: {isFuture:true} | filter: searchText" >
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-xs-3"><a href=#/events/view/{{event.id}}>{{event.name}}</a></div>
+                <div class="col-xs-2">{{event.date}}</div>
+                <div class="col-xs-2" ng-repeat="group in event.resolvedMembers">
+                    {{group.name}}
+                </div>
+                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
+                <div>Does this event require a gift? <input type="checkbox" ng-model="event.giftRequired" ng-change="inputChange(event)"></div>
+            </div>
+        </div>
+    </div>
+
+<h3>Past Events</h3>
+    <div ng-repeat="event in events | filter: {isFuture: false} | filter: searchText" >
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="col-xs-3"><a href=#/events/view/{{event.id}}>{{event.name}}</a></div>

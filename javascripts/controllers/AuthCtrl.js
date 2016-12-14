@@ -56,4 +56,9 @@ $scope.login = {
   $scope.loginUser = function(loginNewUser){
     logMeIn(loginNewUser);
   };
+
+  $scope.logout = function(logout){
+    AuthFactory.logout();
+    $location.url('/Login');
+  };
 });

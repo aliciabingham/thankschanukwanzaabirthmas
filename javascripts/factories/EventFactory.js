@@ -18,11 +18,15 @@ app.factory("EventFactory", function($q, $http, FIREBASE_CONFIG, GroupFactory){
             members.push(jackass);
           } 
 
+          if (event.members) {
           for(var i=0; i < event.members.length; i++) {
             GroupFactory.getSingleGroup(event.members[i]).then(addMemberToEvent);
-          }
           //loop through event.members and get user info
           event.resolvedMembers = members;
+        }
+          } else {
+          event.members = [];
+         }
           events.push(event);
         });
         resolve(events);
@@ -39,7 +43,11 @@ app.factory("EventFactory", function($q, $http, FIREBASE_CONFIG, GroupFactory){
         JSON.stringify({
           name: newEvent.name,
           date: newEvent.date,
-          uid: newEvent.uid
+          uid: newEvent.uid,
+          isFuture: newEvent.isFuture,
+          members: newEvent.members,
+          giftRequired: newEvent.giftRequired,
+          id: newEvent.id
         })
         )
       .success(function(postResponse){
@@ -73,12 +81,15 @@ var getSingleEvent = function(eventId){
     function addMemberToEvent (jackass) {
       members.push(jackass);
     }
-
+    if (event.members) {
     for(var i=0; i < event.members.length; i++) {
       GroupFactory.getSingleGroup(event.members[i]).then(addMemberToEvent);
-    }
     //loop through event.members and get user info
     event.resolvedMembers = members;
+  }
+    } else {
+          event.members = [];
+         }
     resolve(event);   
   })
   .error(function(getSingleError){
@@ -96,7 +107,9 @@ var getSingleEvent = function(eventId){
           date: editEvent.date,
           uid: editEvent.uid,
           members: editEvent.members,
-          id: editEvent.id
+          id: editEvent.id,
+          isFuture: editEvent.isFuture,
+          giftRequired: editEvent.giftRequired
         })
         )
       .success(function(editResponse){

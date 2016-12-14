@@ -29,7 +29,9 @@ app.factory("PeopleFactory", function($q, $http, FIREBASE_CONFIG){
           address: newPerson.address,
           cityState: newPerson.cityState,
           zipCode: newPerson.zipCode,
-          uid: newPerson.uid
+          uid: newPerson.uid,
+          haveAGift: newPerson.haveAGift,
+          giftType: editPerson.giftType
         })
         )
       .success(function(postResponse){
@@ -76,7 +78,9 @@ var getSinglePerson = function(personId){
           address: editPerson.address,
           cityState: editPerson.cityState,
           zipCode: editPerson.zipCode,
-          uid: editPerson.uid
+          uid: editPerson.uid,
+          haveAGift: editPerson.haveAGift,
+          giftType: editPerson.giftType
         })
         )
       .success(function(editResponse){

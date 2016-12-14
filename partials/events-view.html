@@ -2,4 +2,13 @@
 <button class="btn btn-info"><a ng-href="#/events/edit/{{selectedEvent.id}}">Edit</a></button>
 <h2>Name: {{selectedEvent.name}}</h2>
 <h2>Date: {{selectedEvent.date}}</h2>
+<h2 ng-repeat="member in selectedEvent.members">{{member}}</h2>
+Is a gift required for this event?<input type="checkbox" ng-model="event.giftRequired" ng-init="event.giftRequired = false">
+<div ng-if="event.giftRequired">
+<h2 ng-repeat="group in groups">Currently attending groups: {{group.name}}
+Do you have a gift for this group?<input type="checkbox" ng-model="group.giftRequired">
+
+Details?
+<input type="text"></h2>
+</div>
 

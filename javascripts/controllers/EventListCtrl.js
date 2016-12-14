@@ -48,6 +48,7 @@ $scope.inputChange = function(thingy){
   EventFactory.editEvent(thingy).then(function(response){
     console.log("ctrl inputChange response", response);
   });
+  $location.url('/groups/gifts');
 };
 
 
