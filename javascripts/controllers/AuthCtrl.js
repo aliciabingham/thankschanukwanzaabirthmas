@@ -29,19 +29,10 @@ $scope.login = {
 
   $scope.loginFunction = function(){
     $location.url("/Login");
-    $scope.loginContainer = true;
-    $scope.registerContainer = false;
-    console.log("click working");
   };
 
-  $scope.setLoginContainer = function(){
-    $scope.loginContainer = true;
-    $scope.registerContainer = false;
-  };
-
-  $scope.setRegisterContainer = function(){
-    $scope.loginContainer = false;
-    $scope.registerContainer = true;
+  $scope.registerFunction = function(){
+    $location.url("/Register");
   };
 
   $scope.registerUser = function(registerNewUser){
