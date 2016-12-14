@@ -20,11 +20,20 @@ app.controller("EventViewCtrl", function($scope, $routeParams, $rootScope, Event
   });
 
   $scope.getGroups = function(groupId){
-  GroupFactory.getSingleGroup(groupId).then(function(group){
-      console.log("group", group);
+  GroupFactory.getSingleGroup(groupId).then(function(oneGroup){
+    oneGroup.id = groupId;
+    $scope.selectedGroup = oneGroup;
+    console.log("oneGroup from event View ctrl", oneGroup);
     });
   };
-	$scope.getGroups("group0");
+
+
+  $scope.saveData = function(memberId) {
+    GroupFactory.getSingleGroup(memberId).then(function(oneGroup){
+    });
+    GroupFactory.editGroup(memberId);
+    console.log("memberId", memberId);
+  };
 
 GroupFactory.getGroupList($rootScope.user.uid).then(function(results){
 	$scope.groups=results;

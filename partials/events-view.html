@@ -7,12 +7,10 @@ Is a gift required for this event?<input type="checkbox" ng-model="event.giftReq
 <div ng-if="event.giftRequired">
 <h2 ng-repeat="member in selectedGroup.members">{{member}}</h2>
 <h2 ng-repeat="member in selectedEvent.resolvedMembers">Groups currently attending: {{member.name}}
-Do you have a gift for this group?<input type="checkbox" ng-model="group.giftRequired">
+Do you have a gift for this group?<input type="checkbox" ng-model="member.giftRequired">
+Details? <input type="text" ng-model="member.giftType">
+<button class="btn btn-large" ng-click="saveData(member.id)">Save</button>
 </h2>
 
-
-
-Details?
-<input type="text"></h2>
 </div>
 

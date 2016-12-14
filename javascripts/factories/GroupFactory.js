@@ -46,7 +46,8 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
           id: newGroup.id,
           members: newGroup.members, 
           uid: newGroup.uid,
-          giftRequired: newGroup.giftRequired
+          giftRequired: newGroup.giftRequired,
+          giftType: newGroup.giftType
         })
         )
       .success(function(postResponse){
@@ -107,12 +108,14 @@ var getSingleGroup = function(groupId){
           uid: editGroup.uid,
           members: editGroup.members,
           id: editGroup.id,
-          giftRequired: editGroup.giftRequired
+          giftRequired: editGroup.giftRequired,
+          giftType: editGroup.giftType
         })
         )
       .success(function(editResponse){
         resolve(editResponse);
-        console.log("response from groupfactory edit", editResponse);
+        console.log("group factory edit group", editGroup);
+        console.log("group factory edit response", editResponse);
       })
       .error(function(editError){
         reject(editError);
