@@ -12,17 +12,21 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
         Object.keys(response).forEach(function(key){
           var group = response[key];
           group.id = key;
-          let members = [];
-
+          var members = [];
+          console.log("first console", members);
           function addMember (jackass) {
             members.push(jackass);
           } 
-
+          if (group.members) {
           for(var i=0; i < group.members.length; i++) {
             PeopleFactory.getSinglePerson(group.members[i]).then(addMember);
-          }
           //loop through group.members and get user info
           group.resolvedMembers = members;
+          console.log("second console", group.members.length);
+        }
+          } else {
+          group.members = [];
+         }
           groups.push(group);
         });
         resolve(groups);
@@ -39,7 +43,10 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
         JSON.stringify({
           name: newGroup.name,
           usualLocation: newGroup.usualLocation,
-          uid: newGroup.uid
+          id: newGroup.id,
+          members: newGroup.members, 
+          uid: newGroup.uid,
+          giftRequired: newGroup.giftRequired
         })
         )
       .success(function(postResponse){
@@ -69,17 +76,20 @@ var getSingleGroup = function(groupId){
   .success(function(group){
     let members = [];
     group.id = groupId;
-    
     function addMember (jackass) {
       members.push(jackass);
     }
-
+    if (group.members) {
     for(var i=0; i < group.members.length; i++) {
       PeopleFactory.getSinglePerson(group.members[i]).then(addMember);
     }
     //loop through group.members and get user info
     group.resolvedMembers = members;
-    resolve(group);
+  }
+    else {
+      group.members = [];
+    }
+    resolve(group); 
   })
   .error(function(getSingleError){
   reject(getSingleError);
@@ -96,7 +106,8 @@ var getSingleGroup = function(groupId){
           usualLocation: editGroup.usualLocation,
           uid: editGroup.uid,
           members: editGroup.members,
-          id: editGroup.id
+          id: editGroup.id,
+          giftRequired: editGroup.giftRequired
         })
         )
       .success(function(editResponse){
@@ -108,6 +119,8 @@ var getSingleGroup = function(groupId){
       });
     });
   };
+
+
 
 
 return {getGroupList:getGroupList, postNewGroup:postNewGroup, deleteGroup:deleteGroup, getSingleGroup:getSingleGroup, editGroup:editGroup};

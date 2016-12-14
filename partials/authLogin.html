@@ -1,7 +1,6 @@
 <div class="container col-xs-6 col-xs-offset-3">
   <div class="row">
-  <button class="btn" ng-click="setLoginContainer()">Show Login Container</button>
-  <form ng-show="loginContainer">
+  <form>
     <div class="form-group">
       <label>Email Address</label>
       <input type="email" class="col-xs-offset-1 col-xs-10" placeholder="Email address" ng-model="login.email" required autofocus>
@@ -12,6 +11,9 @@
     </div>
     <div class="form-group">
       <a class="btn btn-lg btn-info col-xs-offset-1 col-xs-10" ng-click="loginUser(login)">Submit Login</a>
+    </div>
+    <div class="col-xs-4 col-xs-offset-4">
+      <h3>Need to sign up? <button class="btn" ng-click="registerFunction()">Click here</button> to register.</h3>
     </div>
   </form>
   </div>

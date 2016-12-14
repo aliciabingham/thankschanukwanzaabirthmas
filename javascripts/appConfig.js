@@ -79,6 +79,11 @@ app.config(function($routeProvider){
       controller: 'GroupEditCtrl',
       resolve: {isAuth}
     })
+    .when('/groups/gifts', {
+      templateUrl: 'partials/groups-gifts.html',
+      controller: 'GroupGiftCtrl',
+      resolve: {isAuth}
+    })
     .when('/people/list', {
       templateUrl: 'partials/people-list.html',
       controller: 'PeopleListCtrl',
@@ -97,6 +102,16 @@ app.config(function($routeProvider){
     .when('/people/edit/:id', {
       templateUrl: 'partials/people-new.html',
       controller: 'PeopleEditCtrl',
+      resolve: {isAuth}
+    })
+    .when('/people/gifts', {
+      templateUrl: 'partials/people-gifts.html',
+      controller: 'PeopleGiftCtrl',
+      resolve: {isAuth}
+    })
+    .when('/Logout', {
+      templateUrl: 'partials/authLogout.html',
+      controller: 'AuthCtrl',
       resolve: {isAuth}
     })
    .otherwise('/Login');
