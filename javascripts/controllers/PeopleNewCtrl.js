@@ -10,7 +10,6 @@ app.controller("PeopleNewCtrl", function($scope, $rootScope, $routeParams, $loca
       $location.url("/people/list");
       $scope.newPerson = {};
       $scope.showListView = true;
-	  console.log("onePerson", personId);
     });
   };
 

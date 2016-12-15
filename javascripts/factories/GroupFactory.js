@@ -43,7 +43,6 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
         JSON.stringify({
           name: newGroup.name,
           usualLocation: newGroup.usualLocation,
-          id: newGroup.id,
           members: newGroup.members, 
           uid: newGroup.uid,
           giftRequired: newGroup.giftRequired,
@@ -99,7 +98,6 @@ var getSingleGroup = function(groupId){
 };
 
   var editGroup = function(editGroup){
-    console.log("factory edit response", editGroup);
     return $q((resolve, reject) => {
       $http.put(`${FIREBASE_CONFIG.databaseURL}/groups/${editGroup.id}.json`,
         JSON.stringify({
@@ -107,7 +105,6 @@ var getSingleGroup = function(groupId){
           usualLocation: editGroup.usualLocation,
           uid: editGroup.uid,
           members: editGroup.members,
-          id: editGroup.id,
           giftRequired: editGroup.giftRequired,
           giftType: editGroup.giftType
         })

@@ -15,7 +15,6 @@ getEvents();
 
   $scope.showNewEventPage = function(){
     $location.url("/events/new");
-    console.log("show new event click working");
   };
 
   $scope.showPeoplePage = function(){
@@ -32,13 +31,11 @@ getEvents();
   };
 
   $scope.newEvent = function(){
-    console.log("you clicked new item");
     $scope.showListView = false;
   };
 
 
 $scope.deleteEvent = function(eventID){
-  console.log("you deleted me", eventID);
   EventFactory.deleteEvent(eventID).then(function(response){
     getEvents();
   });
@@ -46,10 +43,7 @@ $scope.deleteEvent = function(eventID){
 
 $scope.inputChange = function(thingy){
   EventFactory.editEvent(thingy).then(function(response){
-    console.log("ctrl inputChange response", response);
   });
   $location.url('/groups/gifts');
 };
-
-
 });

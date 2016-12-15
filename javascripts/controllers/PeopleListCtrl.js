@@ -15,22 +15,18 @@ getPeople();
 
   $scope.showNewPersonPage = function(){
     $location.url("/people/new");
-    console.log("show new person click working");
   };
 
   $scope.allPeople = function(){
-    console.log("you clicked all people");
     $scope.showListView = true;
   };
 
   $scope.newPerson = function(){
-    console.log("you clicked new person");
     $scope.showListView = false;
   };
 
 
 $scope.deletePerson = function(personId){
-  console.log("you deleted me", personId);
   PeopleFactory.deletePerson(personId).then(function(response){
     getPeople();
   });
@@ -38,7 +34,6 @@ $scope.deletePerson = function(personId){
 
 $scope.inputChange = function(thingy){
   PeopleFactory.editPerson(thingy).then(function(response){
-    console.log("ctrl inputChange response", response);
   });
 };
 

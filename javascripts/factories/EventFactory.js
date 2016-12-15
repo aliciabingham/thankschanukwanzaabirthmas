@@ -46,8 +46,7 @@ app.factory("EventFactory", function($q, $http, FIREBASE_CONFIG, GroupFactory){
           uid: newEvent.uid,
           isFuture: newEvent.isFuture,
           members: newEvent.members,
-          giftRequired: newEvent.giftRequired,
-          id: newEvent.id
+          giftRequired: newEvent.giftRequired
         })
         )
       .success(function(postResponse){
@@ -99,7 +98,6 @@ var getSingleEvent = function(eventId){
 };
 
   var editEvent = function(editEvent){
-    console.log("factory edit response", editEvent);
     return $q((resolve, reject) => {
       $http.put(`${FIREBASE_CONFIG.databaseURL}/events/${editEvent.id}.json`,
         JSON.stringify({
@@ -107,7 +105,6 @@ var getSingleEvent = function(eventId){
           date: editEvent.date,
           uid: editEvent.uid,
           members: editEvent.members,
-          id: editEvent.id,
           isFuture: editEvent.isFuture,
           giftRequired: editEvent.giftRequired
         })

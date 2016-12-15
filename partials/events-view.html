@@ -2,15 +2,13 @@
 <button class="btn btn-info"><a ng-href="#/events/edit/{{selectedEvent.id}}">Edit</a></button>
 <h2>Name: {{selectedEvent.name}}</h2>
 <h2>Date: {{selectedEvent.date}}</h2>
-Is a gift required for this event?<input type="checkbox" ng-model="event.giftRequired" ng-init="event.giftRequired = false">
 
-<div ng-if="event.giftRequired">
-<h2 ng-repeat="member in selectedGroup.members">{{member}}</h2>
-<h2 ng-repeat="member in selectedEvent.resolvedMembers">Groups currently attending: {{member.name}}
-Do you have a gift for this group?<input type="checkbox" ng-model="member.giftRequired">
-Details? <input type="text" ng-model="member.giftType">
-<button class="btn btn-large" ng-click="saveData(member.id)">Save</button>
-</h2>
+Is a gift required for this event?<input type="checkbox" ng-model="selectedEvent.giftRequired" ng-change="saveEventData(selectedEvent)" ng-init="selectedEvent.giftRequired">
 
+<div ng-if="selectedEvent.giftRequired">
+	<h2 ng-repeat="member in selectedEvent.resolvedMembers">Groups currently attending: {{member.name}}
+		Do you have a gift for this group?<input type="checkbox" ng-change="saveData(member)" ng-model="member.giftRequired">
+		Details? <input type="text" ng-model="member.giftType">
+	<button class="btn btn-large" ng-click="saveData(member)">Save</button>
+	</h2>
 </div>
-

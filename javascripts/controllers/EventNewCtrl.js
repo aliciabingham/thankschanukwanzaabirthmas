@@ -9,8 +9,6 @@ app.controller("EventNewCtrl", function($scope, $rootScope, $location, EventFact
       $location.url("/events/list");
       $scope.newEvent = {};
       $scope.showListView = true;
-
     });
   };
-
 });

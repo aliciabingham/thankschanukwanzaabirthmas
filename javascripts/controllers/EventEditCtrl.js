@@ -7,7 +7,6 @@ app.controller("EventEditCtrl", function($scope, $location, $routeParams, EventF
   EventFactory.getSingleEvent(eventId).then(function(oneEvent){
       oneEvent.id = eventId;
       $scope.newEvent = oneEvent;
-      console.log("oneEvent", oneEvent);
   });
 
     $scope.addNewEvent = function(){
