@@ -20,6 +20,7 @@ app.controller("EventViewCtrl", function($scope, $routeParams, $rootScope, Event
     EventFactory.editEvent(editEvent).then(function(oneEvent){
       oneEvent.id = eventId;
       $scope.selectedEvent = oneEvent;
+      console.log("selectedEvent", editEvent);
     });
   };
 

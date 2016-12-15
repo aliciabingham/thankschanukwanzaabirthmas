@@ -110,6 +110,7 @@ var getSingleEvent = function(eventId){
         })
         )
       .success(function(editResponse){
+        console.log("editResponse", editResponse);
         resolve(editResponse);
       })
       .error(function(editError){

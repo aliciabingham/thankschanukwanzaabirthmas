@@ -13,7 +13,6 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
           var group = response[key];
           group.id = key;
           var members = [];
-          console.log("first console", members);
           function addMember (jackass) {
             members.push(jackass);
           } 
@@ -22,7 +21,6 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
             PeopleFactory.getSinglePerson(group.members[i]).then(addMember);
           //loop through group.members and get user info
           group.resolvedMembers = members;
-          console.log("second console", group.members.length);
         }
           } else {
           group.members = [];

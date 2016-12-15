@@ -13,4 +13,6 @@ app.controller("GroupNewCtrl", function($scope, $rootScope, $location, GroupFact
     });
   };
 
+
+
 });

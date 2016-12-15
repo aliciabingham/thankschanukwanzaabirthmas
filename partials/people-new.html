@@ -1,5 +1,5 @@
 <div ng-show="!showListView">
-  <h3>New Person</h3>
+  <h3>Edit Existing or Create New Person</h3>
     <form>
       <div class="form-group" placeholder="New Person">
         <input type="text" class="form-control" placeholder="First Name" ng-model="newPerson.firstName">
@@ -19,7 +19,8 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Zip Code" ng-model="newPerson.zipCode">
       </div>
-        <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewPerson()">New Person</button>
+        <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewPerson()">Save Person</button>
+        <button class="btn btn-danger btn-lg" ng-click="cancelPersonEdit()">Cancel</button>
     </form>
   </div>
 </div>

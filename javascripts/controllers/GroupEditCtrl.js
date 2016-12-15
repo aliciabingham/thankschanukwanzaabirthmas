@@ -15,4 +15,8 @@ app.controller("GroupEditCtrl", function($scope, $location, $routeParams, GroupF
         $location.url("/groups/list");
       });
     };
+
+$scope.cancelGroupEdit = function() {
+  $location.url("/groups/list");
+};
 });

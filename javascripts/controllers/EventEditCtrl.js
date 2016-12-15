@@ -15,4 +15,8 @@ app.controller("EventEditCtrl", function($scope, $location, $routeParams, EventF
         $location.url("/events/list");
       });
     };
+
+    $scope.cancelEventEdit = function(){
+      $location.url("/events/list");
+    };
 });
