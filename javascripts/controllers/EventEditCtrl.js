@@ -7,7 +7,6 @@ app.controller("EventEditCtrl", function($scope, $location, $routeParams, EventF
   EventFactory.getSingleEvent(eventId).then(function(oneEvent){
       oneEvent.id = eventId;
       $scope.newEvent = oneEvent;
-      console.log("oneEvent", oneEvent);
   });
 
     $scope.addNewEvent = function(){
@@ -15,5 +14,9 @@ app.controller("EventEditCtrl", function($scope, $location, $routeParams, EventF
         $scope.newEvent = {};
         $location.url("/events/list");
       });
+    };
+
+    $scope.cancelEventEdit = function(){
+      $location.url("/events/list");
     };
 });

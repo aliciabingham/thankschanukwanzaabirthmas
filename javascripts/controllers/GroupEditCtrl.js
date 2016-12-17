@@ -7,7 +7,6 @@ app.controller("GroupEditCtrl", function($scope, $location, $routeParams, GroupF
   GroupFactory.getSingleGroup(groupId).then(function(oneGroup){
       oneGroup.id = groupId;
       $scope.newGroup = oneGroup;
-      console.log("oneGroup", oneGroup);
   });
 
     $scope.addNewGroup = function(){
@@ -16,4 +15,8 @@ app.controller("GroupEditCtrl", function($scope, $location, $routeParams, GroupF
         $location.url("/groups/list");
       });
     };
+
+$scope.cancelGroupEdit = function() {
+  $location.url("/groups/list");
+};
 });

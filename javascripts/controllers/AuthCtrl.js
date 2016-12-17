@@ -6,7 +6,6 @@ $scope.login = {
    password:"123123"
  };
 
-
   if($location.path() === "/logout"){
     AuthFactory.logout();
     $rootScope.user = {};
@@ -14,10 +13,7 @@ $scope.login = {
   }
 
   let logMeIn = function(loginStuff){
-      console.log("why isn't this working");
         AuthFactory.authenticate(loginStuff).then(function(didLogin){
-          console.log(loginStuff, "login Stuff");
-        console.log("didLogin", didLogin);
         return UserFactory.getUser(didLogin.uid);
       }).then(function(userCreds){
         $rootScope.user = userCreds;

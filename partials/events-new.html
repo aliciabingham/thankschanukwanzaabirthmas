@@ -1,5 +1,5 @@
 <div ng-show="!showListView">
-  <h3>New Event</h3>
+  <h3>Edit Event or Create New Event</h3>
     <form>
       <div class="form-group" placeholder="New Event">
         <input type="text" class="form-control" placeholder="New Event" ng-model="newEvent.name">
@@ -15,7 +15,8 @@
         Is a gift required?
         <input type="checkbox" class="form-control" ng-model="newEvent.giftRequired">
       </div>
-        <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEvent()">New Event</button>
+        <button type="button" class="btn btn-primary btn-lg col-xs-2" ng-click="addNewEvent()">Save Event</button>
+        <button class="btn btn-danger btn-lg" ng-click="cancelEventEdit()">Cancel</button>
     </form>
   </div>
 </div>

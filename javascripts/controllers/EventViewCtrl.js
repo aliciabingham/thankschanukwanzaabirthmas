@@ -4,27 +4,31 @@ app.controller("EventViewCtrl", function($scope, $routeParams, $rootScope, Event
   $scope.selectedEvent = {};
   var eventId = $routeParams.id;
 
-  // GroupFactory.getSingleGroup(groupId).then(function(oneGroup){
-  //   oneGroup.id = groupId;
-  //   $scope.selectedGroup = oneGroup;
-  //   console.log("oneGroup", oneGroup);
-  // });
-
- 	
 
   EventFactory.getSingleEvent(eventId).then(function(oneEvent){
-    oneEvent.id = eventId;
     $scope.selectedEvent = oneEvent;
-    console.log("oneEvent", oneEvent);
-    // Make another ajax call with the selectedEvents data
   });
 
   $scope.getGroups = function(groupId){
-  GroupFactory.getSingleGroup(groupId).then(function(group){
-      console.log("group", group);
+  GroupFactory.getSingleGroup(groupId).then(function(oneGroup){
+    $scope.selectedGroup = oneGroup;
+    $scope.giftRequired = groupId.giftRequired;
     });
   };
-	$scope.getGroups("group0");
+
+  $scope.saveEventData = function(editEvent) {
+    EventFactory.editEvent(editEvent).then(function(oneEvent){
+      oneEvent.id = eventId;
+      $scope.selectedEvent = oneEvent;
+      console.log("selectedEvent", editEvent);
+    });
+  };
+
+  $scope.saveData = function(editGroup) {
+  GroupFactory.editGroup(editGroup).then(function(oneMember){
+    $scope.selectedGroup = oneMember;
+    });
+  };
 
 GroupFactory.getGroupList($rootScope.user.uid).then(function(results){
 	$scope.groups=results;

@@ -13,7 +13,6 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
           var group = response[key];
           group.id = key;
           var members = [];
-          console.log("first console", members);
           function addMember (jackass) {
             members.push(jackass);
           } 
@@ -22,7 +21,6 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
             PeopleFactory.getSinglePerson(group.members[i]).then(addMember);
           //loop through group.members and get user info
           group.resolvedMembers = members;
-          console.log("second console", group.members.length);
         }
           } else {
           group.members = [];
@@ -43,10 +41,10 @@ app.factory("GroupFactory", function($q, $http, FIREBASE_CONFIG, PeopleFactory, 
         JSON.stringify({
           name: newGroup.name,
           usualLocation: newGroup.usualLocation,
-          id: newGroup.id,
           members: newGroup.members, 
           uid: newGroup.uid,
-          giftRequired: newGroup.giftRequired
+          giftRequired: newGroup.giftRequired,
+          giftType: newGroup.giftType
         })
         )
       .success(function(postResponse){
@@ -98,7 +96,6 @@ var getSingleGroup = function(groupId){
 };
 
   var editGroup = function(editGroup){
-    console.log("factory edit response", editGroup);
     return $q((resolve, reject) => {
       $http.put(`${FIREBASE_CONFIG.databaseURL}/groups/${editGroup.id}.json`,
         JSON.stringify({
@@ -106,13 +103,14 @@ var getSingleGroup = function(groupId){
           usualLocation: editGroup.usualLocation,
           uid: editGroup.uid,
           members: editGroup.members,
-          id: editGroup.id,
-          giftRequired: editGroup.giftRequired
+          giftRequired: editGroup.giftRequired,
+          giftType: editGroup.giftType
         })
         )
       .success(function(editResponse){
         resolve(editResponse);
-        console.log("response from groupfactory edit", editResponse);
+        console.log("group factory edit group", editGroup);
+        console.log("group factory edit response", editResponse);
       })
       .error(function(editError){
         reject(editError);
