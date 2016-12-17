@@ -1,7 +1,8 @@
-'use strict';
+ 'use strict';
 
 app.controller("EventNewCtrl", function($scope, $rootScope, $location, EventFactory){
   $scope.newEvent = {};
+  $scope.newEvent.isFuture = false;
 
   $scope.addNewEvent = function(){
     $scope.newEvent.uid = $rootScope.user.uid;
@@ -12,15 +13,8 @@ app.controller("EventNewCtrl", function($scope, $rootScope, $location, EventFact
     });
   };
 
-  $scope.eventInFuture =function(){
-  	$scope.newEVent.isFuture = true;
-  	$scope.addNewEvent();
+  $scope.cancelEditEvent = function(){
+    $location.url('/events/list');
   };
-
-    $scope.eventInPast =function(){
-  	$scope.newEVent.isFuture = false;
-  	$scope.addNewEvent();
-  };
-
 
 });

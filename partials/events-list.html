@@ -12,7 +12,7 @@
 <h3>Upcoming Events</h3>
 <div class="row">
     <div ng-repeat="event in events | filter: {isFuture:true} | filter: searchText" >
-        <div class="eventList col-xs-3">
+        <div class="eventList col-xs-2-offset col-xs-3">
                 <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
                 <div><b>Date:</b> {{event.date}}</div>
                 <div ng-repeat="group in event.resolvedMembers">
@@ -39,7 +39,7 @@
 <button class="btn btn-lg col-xs-offset-3 col-xs-6" ng-click="showNewEventPage()">New Event</button>
 
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
         <ul class="pager">
            <li class="btn btn-lg" ng-click="showEventPage()">Events</li>
@@ -47,7 +47,7 @@
             <li class="btn btn-lg" ng-click="showGroupsPage()">Groups</li>
         </ul>
     </div>
-</nav>
+</nav> -->
 
 
 
