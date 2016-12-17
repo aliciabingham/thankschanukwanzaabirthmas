@@ -10,19 +10,26 @@
 </div>
 
 <h3>People</h3>
+<div class="row">
     <div ng-repeat="person in people">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="col-xs-1"><a href=#/people/view/{{person.id}}>{{person.firstName}}</a></div>
-                <div class="col-xs-1"><a href=#/people/view/{{person.id}}>{{person.lastName}}</a></div>
-                <div class="col-xs-2">{{person.phoneNumber}}</div>
-                <div class="col-xs-3">{{person.address}}</div>
-                <div class="col-xs-2">{{person.cityState}}</div>
-                <div class="col-xs-1">{{person.zipCode}}</div>
-                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deletePerson(person.id)"></button></div>
+        <div class="peopleList col-xs-3">
+                <div><a href=#/people/view/{{person.id}}>{{person.firstName}}</a></div>
+                <div><a href=#/people/view/{{person.id}}>{{person.lastName}}</a></div>
+                <div>{{person.phoneNumber}}</div>
+                <div>{{person.address}}</div>
+                <div>{{person.cityState}}</div>
+                <div>{{person.zipCode}}</div>
+                <div><button class="btn btn-danger fa fa-trash-o" ng-click="deletePerson(person.id)"></button></div>
             </div>
         </div>
     </div>
-<div class="row">
-    <button class="btn" ng-click="showNewPersonPage()">New Person</button>
-</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <ul class="pager">
+           <li class="btn btn-lg" ng-click="showEventPage()">Events</li>
+            <li class="btn btn-lg" ng-click="showPeoplePage()">People</li>
+            <li class="btn btn-lg" ng-click="showGroupsPage()">Groups</li>
+        </ul>
+    </div>
+</nav>

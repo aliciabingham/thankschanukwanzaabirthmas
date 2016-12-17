@@ -13,6 +13,10 @@ let getEvents = function(){
 
 getEvents();
 
+  $scope.showEventPage = function(){
+    $location.url("/events/list");
+  };
+
   $scope.showNewEventPage = function(){
     $location.url("/events/new");
   };
