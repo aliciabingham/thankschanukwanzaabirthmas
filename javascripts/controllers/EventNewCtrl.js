@@ -11,4 +11,16 @@ app.controller("EventNewCtrl", function($scope, $rootScope, $location, EventFact
       $scope.showListView = true;
     });
   };
+
+  $scope.eventInFuture =function(){
+  	$scope.newEVent.isFuture = true;
+  	$scope.addNewEvent();
+  };
+
+    $scope.eventInPast =function(){
+  	$scope.newEVent.isFuture = false;
+  	$scope.addNewEvent();
+  };
+
+
 });

@@ -10,39 +10,46 @@
 </div>
 
 <h3>Upcoming Events</h3>
+<div class="row">
     <div ng-repeat="event in events | filter: {isFuture:true} | filter: searchText" >
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="col-xs-3"><a href=#/events/view/{{event.id}}>{{event.name}}</a></div>
-                <div class="col-xs-2">{{event.date}}</div>
-                <div class="col-xs-2" ng-repeat="group in event.resolvedMembers">
-                    {{group.name}}
+        <div class="eventList col-xs-3">
+                <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
+                <div><b>Date:</b> {{event.date}}</div>
+                <div ng-repeat="group in event.resolvedMembers">
+                    <b>Group Attending:</b> {{group.name}}
                 </div>
-                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
-            </div>
+                <div><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
         </div>
     </div>
-
+</div>
 <h3>Past Events</h3>
+<div class="row">
     <div ng-repeat="event in events | filter: {isFuture: false} | filter: searchText" >
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="col-xs-3"><a href=#/events/view/{{event.id}}>{{event.name}}</a></div>
-                <div class="col-xs-2">{{event.date}}</div>
-                <div class="col-xs-2" ng-repeat="group in event.resolvedMembers">
-                    {{group.name}}
+        <div class="eventList col-xs-3">
+                <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
+                <div><b>Date:</b> {{event.date}}</div>
+                <div ng-repeat="group in event.resolvedMembers">
+                    <b>Group Attending:</b> {{group.name}}
                 </div>
-                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
+                <div><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
             </div>
         </div>
     </div>
 
-<div class="row">
-    <button class="btn" ng-click="showNewEventPage()">New Event</button>
-</div>
-<div class="row">
-    <button class="btn btn-lg" ng-click="showPeoplePage()">People</button>
-</div>
-<div class="row">
-    <button class="btn btn-lg" ng-click="showGroupsPage()">Groups</button>
-</div>
+<button class="btn btn-lg col-xs-offset-3 col-xs-6" ng-click="showNewEventPage()">New Event</button>
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <ul class="pager">
+           <li class="btn btn-lg" ng-click="showEventPage()">Events</li>
+            <li class="btn btn-lg" ng-click="showPeoplePage()">People</li>
+            <li class="btn btn-lg" ng-click="showGroupsPage()">Groups</li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
