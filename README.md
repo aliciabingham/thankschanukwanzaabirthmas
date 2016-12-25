@@ -1,4 +1,4 @@
-# Todo app with Angular
+# Thankschanukwanzaabirthmas app with Angular
 
 ### TO RUN:
 * cd lib

@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 app.controller("GroupNewCtrl", function($scope, $rootScope, $location, GroupFactory){
   $scope.newGroup = {};
@@ -9,8 +9,12 @@ app.controller("GroupNewCtrl", function($scope, $rootScope, $location, GroupFact
       $location.url("/groups/list");
       $scope.newGroup = {};
       $scope.showListView = true;
-
+ 
     });
+  };
+
+  $scope.cancelGroupEdit = function() {
+  	$location.url('/groups/list');
   };
 
 

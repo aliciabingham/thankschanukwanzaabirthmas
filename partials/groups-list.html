@@ -9,23 +9,33 @@
     </div>
 </div>
 <h3>Groups</h3>
+    <div class="row">
     <div ng-repeat="group in groups">
         <div class="groupList col-xs-4">
                 <div><a href=#/groups/view/{{group.id}}><b>Group Name:</b> {{group.name}}</a></div>
                 <div ng-repeat="person in group.resolvedMembers">
                     <b>Member:</b> {{person.firstName}} {{person.lastName}}
                 </div>
-                <div class="col-xs-3">{{group.usualLocation}}</div>
-                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteGroup(group.id)"></button></div>
-            </div>
+                <div><b>Group's usual meeting location:</b> {{group.usualLocation}}</div>
+                <div><button class="btn btn-danger fa fa-trash-o" ng-click="deleteGroup(group.id)"></button></div>
+<!--             </div>
+        </div> -->
+        </div>
         </div>
     </div>
 <div class="row">
-    <button class="btn" ng-click="showNewGroupPage()">New Group</button>
+    <button class="btn btn-lg col-xs-offset-3 col-xs-6" ng-click="showNewGroupPage()">New Group</button>
 </div>
 
-
-
+<!-- <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <ul class="pager">
+           <li class="btn btn-lg" ng-click="showEventPage()">Events</li>
+            <li class="btn btn-lg" ng-click="showPeoplePage()">People</li>
+            <li class="btn btn-lg" ng-click="showGroupsPage()">Groups</li>
+        </ul>
+    </div>
+</nav> -->
 
 
 

@@ -17,6 +17,21 @@ getGroups();
     $location.url("/groups/new");
   };
 
+  $scope.showNewEventPage = function(){
+    $location.url("/events/new");
+  };
+
+  $scope.showEventPage = function(){
+    $location.url("/events/list");
+  };
+
+  $scope.showPeoplePage = function(){
+    $location.url("/people/list");
+  };
+
+  $scope.showGroupsPage = function(){
+  $location.url("/groups/list");
+  };
 
   $scope.allGroups = function(){
     $scope.showListView = true;

@@ -16,10 +16,10 @@ app.controller("EventViewCtrl", function($scope, $routeParams, $rootScope, Event
     });
   };
 
+
+
   $scope.saveEventData = function(editEvent) {
     EventFactory.editEvent(editEvent).then(function(oneEvent){
-      oneEvent.id = eventId;
-      $scope.selectedEvent = oneEvent;
       console.log("selectedEvent", editEvent);
     });
   };
