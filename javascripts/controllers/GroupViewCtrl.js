@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("GroupViewCtrl", function($scope, $routeParams, $rootScope, GroupFactory, EventFactory){
+app.controller("GroupViewCtrl", function($scope, $location, $routeParams, $rootScope, GroupFactory, EventFactory){
   $scope.selectedGroup = {};
   var groupId = $routeParams.id;
 
@@ -19,6 +19,9 @@ app.controller("GroupViewCtrl", function($scope, $routeParams, $rootScope, Group
     $scope.events=results;
   });
 
+  $scope.moveToEventPage = function(){
+    $location.url('/events/list');
+  };
 
    $scope.events=[];
 });

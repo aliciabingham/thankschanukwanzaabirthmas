@@ -8,7 +8,7 @@ Is a gift required for this event?<input type="checkbox" ng-model="selectedEvent
 <div ng-if="selectedEvent.giftRequired">
 	<h2 ng-repeat="member in selectedEvent.resolvedMembers">Groups currently attending: <a href="#/groups/view/{{member.id}}">{{member.name}}</a> 
 		Do you have a gift for this group?<input type="checkbox" ng-change="saveData(member)" ng-model="member.giftRequired">
-		Details? <input type="text" ng-model="member.giftType">
+		Details? <textarea ng-model="member.giftType"></textarea>
 	<button class="btn btn-large" ng-click="saveData(member)">Save</button>
 	</h2>
 </div>

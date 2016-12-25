@@ -1,3 +1,12 @@
+$background-color: #A8DADC;
+
+body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	background-color: $background-color;
+}
+
+
+
 nav {
 	.logo { 
 	height: 70px;
@@ -8,4 +17,57 @@ nav {
 }
 .navbar {
 min-height: 70px;
+
 }
+
+
+
+ .navbar-default {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.groupList {
+	border: 1px solid black;
+	height: 300px;
+	display: inline-block;
+	text-align: center;
+	font-size: 1.5em;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.eventList {
+	border: 1px solid black;
+	height: 300px;
+	display: inline-block;
+	text-align: center;
+	font-size: 1.5em;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.peopleList {
+	border: 1px solid black;
+	height: 300px;
+	display: inline-block;
+	text-align: center;
+	font-size: 1.5em;	
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+h3 {
+	font-family: 'Handlee', cursive;
+	font-size: 2em;
+}
+
+.dropdown-menu {
+	font-size: 1em;
+}
+
+textarea {
+	font-size: 0.5em;
+	height: 150px;
+	width: 300px;
+	display: block;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
