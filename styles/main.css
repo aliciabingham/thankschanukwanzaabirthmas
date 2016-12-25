@@ -2,11 +2,15 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   background-color: #A8DADC; }
 
-nav .logo {
-  height: 70px; }
 
-nav .navbar-brand {
-  padding: 0; }
+nav {
+  font-family: 'Handlee', cursive;
+  font-size: 1.4em; }
+  nav .logo {
+    height: 70px; }
+  nav .navbar-brand {
+    padding: 0; }
+
 
 .navbar {
   min-height: 70px; }
