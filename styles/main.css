@@ -2,6 +2,9 @@ body {
   font-family: 'Open Sans Condensed', sans-serif;
   background-color: #A8DADC; }
 
+nav .logo {
+  height: 70px; }
+
 nav {
   font-family: 'Handlee', cursive;
   font-size: 1.4em; }
@@ -19,8 +22,7 @@ nav {
 
 .groupList {
   border: 1px solid black;
-  height: 20%;
-  margin: .5%;
+  height: 300px;
   display: inline-block;
   text-align: center;
   font-size: 1.5em;
@@ -28,8 +30,8 @@ nav {
 
 .eventList {
   border: 1px solid black;
-  height: 20%;
-  margin: 1%;
+
+  height: 300px;
   display: inline-block;
   text-align: center;
   font-size: 1.5em;
@@ -37,8 +39,7 @@ nav {
 
 .peopleList {
   border: 1px solid black;
-  height: 20%;
-  margin: 1%;
+  height: 300px;
   display: inline-block;
   text-align: center;
   font-size: 1.5em;
@@ -50,3 +51,11 @@ h3 {
 
 .dropdown-menu {
   font-size: 1em; }
+
+textarea {
+  font-size: 0.5em;
+  height: 150px;
+  width: 300px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.5); }
+

@@ -18,12 +18,17 @@ app.controller("PeopleViewCtrl", function($scope, $location, $rootScope, $routeP
       group.members.push(personId);
       GroupFactory.editGroup(group);
     });
+
+    
   };
 
   GroupFactory.getGroupList($rootScope.user.uid).then(function(results){
   	$scope.groups=results;
   });
 
+  $scope.moveToGroupPage = function(){
+    $location.url('/groups/list');
+  };
 
    $scope.groups=[];
 });

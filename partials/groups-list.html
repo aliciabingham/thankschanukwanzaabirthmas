@@ -11,9 +11,7 @@
 <h3>Groups</h3>
     <div class="row">
     <div ng-repeat="group in groups">
-<!--         <div class="panel panel-default">
-        <div class="panel-body"> -->
-        <div class="groupList col-xs-3">
+        <div class="groupList col-xs-4">
                 <div><a href=#/groups/view/{{group.id}}><b>Group Name:</b> {{group.name}}</a></div>
                 <div ng-repeat="person in group.resolvedMembers">
                     <b>Member:</b> {{person.firstName}} {{person.lastName}}

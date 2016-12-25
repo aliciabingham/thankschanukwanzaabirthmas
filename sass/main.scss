@@ -1,13 +1,9 @@
 $background-color: #A8DADC;
 
-
-
-
 body {
 	font-family: 'Open Sans Condensed', sans-serif;
 	background-color: $background-color;
 }
-
 
 nav {
 	.logo { 
@@ -30,8 +26,7 @@ min-height: 70px;
 
 .groupList {
 	border: 1px solid black;
-	height: 20%;
-	margin: .5%;
+	height: 300px;
 	display: inline-block;
 	text-align: center;
 	font-size: 1.5em;
@@ -40,8 +35,7 @@ min-height: 70px;
 
 .eventList {
 	border: 1px solid black;
-	height: 20%;
-	margin: 1%;
+	height: 300px;
 	display: inline-block;
 	text-align: center;
 	font-size: 1.5em;
@@ -50,8 +44,7 @@ min-height: 70px;
 
 .peopleList {
 	border: 1px solid black;
-	height: 20%;
-	margin: 1%;
+	height: 300px;
 	display: inline-block;
 	text-align: center;
 	font-size: 1.5em;	
@@ -67,3 +60,10 @@ h3 {
 	font-size: 1em;
 }
 
+textarea {
+	font-size: 0.5em;
+	height: 150px;
+	width: 300px;
+	display: block;
+	background-color: rgba(255, 255, 255, 0.5);
+}

@@ -12,7 +12,7 @@
 <h3>Upcoming Events</h3>
 <div class="row">
     <div ng-repeat="event in events | filter: {isFuture:true} | filter: searchText" >
-        <div class="eventList col-xs-2-offset col-xs-3">
+        <div class="eventList col-xs-4">
                 <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
                 <div><b>Date:</b> {{event.date}}</div>
                 <div ng-repeat="group in event.resolvedMembers">
@@ -25,7 +25,7 @@
 <h3>Past Events</h3>
 <div class="row">
     <div ng-repeat="event in events | filter: {isFuture: false} | filter: searchText" >
-        <div class="eventList col-xs-3">
+        <div class="eventList col-xs-4">
                 <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
                 <div><b>Date:</b> {{event.date}}</div>
                 <div ng-repeat="group in event.resolvedMembers">
