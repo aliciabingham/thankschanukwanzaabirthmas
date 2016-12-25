@@ -13,4 +13,8 @@ app.controller("PeopleNewCtrl", function($scope, $rootScope, $routeParams, $loca
     });
   };
 
+  $scope.cancelPersonEdit = function() {
+    $location.url("/people/list");
+  };
+
 });

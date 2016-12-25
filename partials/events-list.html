@@ -10,6 +10,7 @@
 </div>
 
 <h3>Upcoming Events</h3>
+<div class="row">
     <div ng-repeat="event in events | filter: {isFuture:true} | filter: searchText" >
         <div class="eventList col-xs-4">
                 <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
@@ -17,12 +18,12 @@
                 <div ng-repeat="group in event.resolvedMembers">
                     <b>Group Attending:</b> {{group.name}}
                 </div>
-                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
-            </div>
+                <div><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
         </div>
     </div>
-
+</div>
 <h3>Past Events</h3>
+<div class="row">
     <div ng-repeat="event in events | filter: {isFuture: false} | filter: searchText" >
         <div class="eventList col-xs-4">
                 <div><a href=#/events/view/{{event.id}}><b>Event:</b> {{event.name}}</a></div>
@@ -30,9 +31,10 @@
                 <div ng-repeat="group in event.resolvedMembers">
                     <b>Group Attending:</b> {{group.name}}
                 </div>
-                <div class="col-xs-1"><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
+                <div><button class="btn btn-danger fa fa-trash-o" ng-click="deleteEvent(event.id)"></button></div>
             </div>
         </div>
     </div>
 
+<button class="btn btn-lg col-xs-offset-3 col-xs-6" ng-click="showNewEventPage()">New Event</button>
 
